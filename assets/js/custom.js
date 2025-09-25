@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
-  
+
+
 
   const sections = document.querySelectorAll(".section");
   const navLinks = document.querySelectorAll(".fbs__net-navbar .scroll-link");
@@ -110,7 +110,7 @@ const navbarInit = () => {
 const logoMarqueeInit = () => {
   const wrapper = document.querySelector(".logo-wrapper");
   const boxes = gsap.utils.toArray(".logo-item");
-  
+
   if (boxes.length > 0) {
     const loop = horizontalLoop(boxes, {
       paused: false,
@@ -118,17 +118,17 @@ const logoMarqueeInit = () => {
       speed: 0.25,
       reversed: false,
     });
-    
+
     function horizontalLoop(items, config) {
       items = gsap.utils.toArray(items);
       config = config || {};
       let tl = gsap.timeline({
-          repeat: config.repeat,
-          paused: config.paused,
-          defaults: { ease: "none" },
-          onReverseComplete: () =>
-            tl.totalTime(tl.rawTime() + tl.duration() * 100),
-        }),
+        repeat: config.repeat,
+        paused: config.paused,
+        defaults: { ease: "none" },
+        onReverseComplete: () =>
+          tl.totalTime(tl.rawTime() + tl.duration() * 100),
+      }),
         length = items.length,
         startX = items[0].offsetLeft,
         times = [],
@@ -150,7 +150,7 @@ const logoMarqueeInit = () => {
           let w = (widths[i] = parseFloat(gsap.getProperty(el, "width", "px")));
           xPercents[i] = snap(
             (parseFloat(gsap.getProperty(el, "x", "px")) / w) * 100 +
-              gsap.getProperty(el, "xPercent")
+            gsap.getProperty(el, "xPercent")
           );
           return xPercents[i];
         },
@@ -161,7 +161,7 @@ const logoMarqueeInit = () => {
         (xPercents[length - 1] / 100) * widths[length - 1] -
         startX +
         items[length - 1].offsetWidth *
-          gsap.getProperty(items[length - 1], "scaleX") +
+        gsap.getProperty(items[length - 1], "scaleX") +
         (parseFloat(config.paddingRight) || 0);
       for (i = 0; i < length; i++) {
         item = items[i];
@@ -267,7 +267,7 @@ const swiperInit = () => {
 
   const progressCircle = document.querySelector(".autoplay-progress svg");
   const progressContent = document.querySelector(".autoplay-progress span");
-  if (progressCircle && progressContent ) {
+  if (progressCircle && progressContent) {
     var swiper2 = new Swiper(".sliderSwiper", {
       slidesPerView: 1,
       speed: 700,
@@ -504,14 +504,14 @@ const countdownInit = () => {
   const x = setInterval(function () {
 
     const now = new Date().getTime();
-      
+
     const distance = launchDate - now;
-      
+
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
+
     // Output the result in an element with id
     const daysEl = document.getElementById("days");
     const hoursEl = document.getElementById("hours");
@@ -529,7 +529,7 @@ const countdownInit = () => {
     if (secondsEl) {
       secondsEl.innerText = seconds;
     }
-      
+
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
@@ -537,5 +537,7 @@ const countdownInit = () => {
     }
   }, 1000);
 };
+
+
 document.addEventListener('DOMContentLoaded', countdownInit);
 
