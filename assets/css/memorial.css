@@ -1,0 +1,92 @@
+/* Local, minimal tokens to match the soft look from reference */
+:root {
+  --et-soft-bg: #f6f1e8;
+  /* warm beige for soft panels */
+  --et-soft-green: #d8e7d0;
+  /* soft green for chips/badges */
+  --et-border: rgba(0, 0, 0, .08);
+  /* subtle border */
+}
+
+.memorial-wrap .slogan {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.section {
+  padding: 30px 0;
+  scroll-margin-top: 60px;
+}
+
+.memorial-wrap .soft-panel {
+  background: var(--et-soft-bg);
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+.memorial-wrap .name-badge {
+  display: block;
+  width: 100%;
+  background: var(--et-soft-green);
+  color: var(--bs-heading-color, #16181B);
+  border-radius: .75rem;
+  padding: .5rem 1rem;
+  font-weight: 700;
+  font-size: clamp(1.55rem, 1.2vw + .6rem, 1.35rem);
+}
+
+.memorial-wrap .main-photo {
+  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.memorial-wrap .note {
+  border: 1px solid var(--et-border);
+  border-radius: .75rem;
+  padding: .85rem 1rem;
+  /* background: rgba(255, 255, 255, .6); */
+}
+
+.memorial-wrap .section-chip {
+  display: inline-block;
+  background: var(--et-soft-green);
+  color: var(--bs-heading-color, #16181B);
+  border-radius: 999px;
+  padding: .35rem .9rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
+}
+
+/* Swiper card look */
+.memorial-wrap .swiper {
+  padding: .25rem .25rem 2.25rem .25rem;
+}
+
+.memorial-wrap .swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+}
+
+.memorial-wrap .img-caption {
+  text-align: center;
+  margin-top: .6rem;
+  opacity: .9;
+}
+
+.memorial-wrap .tribute-card {
+  background: var(--et-soft-bg);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  height: 100%;
+}
+
+.memorial-wrap .decor-img {
+  max-width: 150px;
+  height: auto;
+  opacity: 0.9;
+}

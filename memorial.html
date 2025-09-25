@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--
+  EternalTrace — Memorial Page (demo)
+  Uses the same vendor stack as landing: Bootstrap 5, AOS, Swiper, Glightbox.
+  Comments are in English (per user's preference).
+-->
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EternalTrace — Галерея памяти</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo-for-tab.svg" />
+
+    <!-- Google Font (same as landing) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- Vendors (same as landing) -->
+    <link href="assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="assets/vendors/glightbox/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendors/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/vendors/aos/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Theme stylesheet (same as landing) -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/memorial.css" rel="stylesheet" />
+
+    <!-- Apply theme ASAP (same approach as landing) -->
+    <script>
+        (function () {
+            const storedTheme = localStorage.getItem("theme") || "dark";
+            document.documentElement.setAttribute("data-bs-theme", storedTheme);
+        })();
+    </script>
+
+</head>
+
+<body>
+    <div class="site-wrap memorial-wrap">
+
+        <main>
+            <!-- ======= Title / Intro ======= -->
+            <section class="section" id="memorial-top">
+                <div class="container">
+
+
+                    <div class="row mt-4 g-3">
+                        <div class="col-12">
+                            <span class="name-badge" data-aos="fade-up" data-aos-delay="50">
+                                Иванов Александр Иванович
+                            </span>
+                        </div>
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+                            <div class="fs-5">с 25 октября 1924 по 3 марта 2020</div>
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                            <a class="glightbox" href="assets/images/memorial/main.jpg" data-gallery="main">
+                                <img class="main-photo" src="assets/images/memorial/main.jpg" alt="Главное фото"
+                                    loading="lazy" />
+                            </a>
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="soft-panel h-100 d-flex flex-column text-center">
+
+                                <!-- Верх: узор + слоган -->
+                                <div>
+                                    <img src="assets/images/memorial/decor-top.png" alt="Декор сверху"
+                                        class="decor-img mb-3" />
+                                    <div class="mb-3 text-uppercase small opacity-75 slogan">
+                                        ТАМ, ГДЕ ПАМЯТЬ — СМЕРТИ НЕТ
+                                    </div>
+                                </div>
+
+                                <!-- Центр: эпитафия -->
+                                <div class="fs-4 fw-semibold mt-auto mb-auto">
+                                    Ты жизнь прожил достойно,
+                                    Оставив память нам на век.
+                                    В безмолвном мире спи спокойно,
+                                    Любимый нами человек.
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="250">
+                            <div class="note mt-3">
+                                3 марта 2020 года, в возрасте 96 лет после продолжительной болезни скончался профессор
+                                Иванов, ученый, заботливый муж, отец двоих детей, любимый дедушка троих внуков.
+                            </div>
+                        </div>
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="250">
+                            <div class="soft-panel">
+                                <p>
+                                    Весь сознательный жизненный путь Александра Ивановича был связан с Иркутским
+                                    государственным
+                                    университетом, куда он поступил в 1946 г. Уже в студенческие годы он выделялся
+                                    пытливым умом,
+                                    способностью к творческому исследованию и научной дерзостью. После аспирантуры и
+                                    защиты кандидатской
+                                    диссертации в 1953 г. был приглашён на кафедру уголовного права, которую не покидал
+                                    до самой пенсии,
+                                    пройдя путь от аспиранта до заслуженного профессора.
+                                </p>
+                                <p class="mb-0">
+                                    Чем бы ни занимался Александр Иванович, он всё пропускал через сердце, был
+                                    внимательным наставником и
+                                    сильным руководителем. В наших сердцах навсегда сохранится память о выдающемся
+                                    учёном и человеке.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= Family ======= -->
+            <section class="section" id="family">
+                <div class="container">
+                    <div class="mb-2"><span class="section-chip">Семья</span></div>
+
+                    <div class="row">
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="0">
+                            <div class="swiper et-swiper et-family">
+                                <div class="swiper-wrapper">
+                                    <!-- Slide -->
+                                    <div class="swiper-slide">
+                                        <a class="glightbox" href="assets/images/memorial/family-1.jpg"
+                                            data-gallery="family">
+                                            <img src="assets/images/memorial/family-1.jpg"
+                                                alt="Рыбалка с сыном и внуком" loading="lazy" />
+                                        </a>
+                                        <div class="img-caption">Рыбалка с сыном и внуком. Волга, август 2015</div>
+                                    </div>
+                                    <!-- Slide -->
+                                    <div class="swiper-slide">
+                                        <a class="glightbox" href="assets/images/memorial/family-2.jpg"
+                                            data-gallery="family">
+                                            <img src="assets/images/memorial/family-2.jpg" alt="Семейная прогулка"
+                                                loading="lazy" />
+                                        </a>
+                                        <div class="img-caption">Семейная прогулка в парке</div>
+                                    </div>
+                                    <!-- Slide -->
+                                    <div class="swiper-slide">
+                                        <a class="glightbox" href="assets/images/memorial/family-3.jpg"
+                                            data-gallery="family">
+                                            <img src="assets/images/memorial/family-3.jpg" alt="Домашний вечер"
+                                                loading="lazy" />
+                                        </a>
+                                        <div class="img-caption">Домашний вечер</div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= Hobbies ======= -->
+            <section class="section" id="hobbies">
+                <div class="container">
+                    <div class="mb-2"><span class="section-chip">Увлечения</span></div>
+
+                    <div class="row">
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="0">
+                            <div class="swiper et-swiper et-hobbies">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a class="glightbox" href="assets/images/memorial/hobby-1.jpg"
+                                            data-gallery="hobbies">
+                                            <img src="assets/images/memorial/hobby-1.jpg"
+                                                alt="На берегу моря, июль 2018" loading="lazy" />
+                                        </a>
+                                        <div class="img-caption">С супругой на берегу моря, июль 2018</div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a class="glightbox" href="assets/images/memorial/hobby-2.jpg"
+                                            data-gallery="hobbies">
+                                            <img src="assets/images/memorial/hobby-2.jpg" alt="Игра на гитаре"
+                                                loading="lazy" />
+                                        </a>
+                                        <div class="img-caption">Игра на гитаре</div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a class="glightbox" href="assets/images/memorial/hobby-3.jpg"
+                                            data-gallery="hobbies">
+                                            <img src="assets/images/memorial/hobby-3.jpg" alt="Пешие прогулки"
+                                                loading="lazy" />
+                                        </a>
+                                        <div class="img-caption">Пешие прогулки</div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= Work ======= -->
+            <section class="section" id="work">
+                <div class="container">
+                    <div class="mb-2"><span class="section-chip">Работа</span></div>
+
+                    <div class="row">
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="0">
+                            <div class="swiper et-swiper et-work">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a class="glightbox" href="assets/images/memorial/work-1.jpg"
+                                            data-gallery="work">
+                                            <img src="assets/images/memorial/work-1.jpg" alt="Рабочие будни"
+                                                loading="lazy" />
+                                        </a>
+                                        <div class="img-caption">Рабочие будни</div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a class="glightbox" href="assets/images/memorial/work-2.jpg"
+                                            data-gallery="work">
+                                            <img src="assets/images/memorial/work-2.jpg" alt="Лекция для студентов"
+                                                loading="lazy" />
+                                        </a>
+                                        <div class="img-caption">Лекция для студентов</div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a class="glightbox" href="assets/images/memorial/work-3.jpg"
+                                            data-gallery="work">
+                                            <img src="assets/images/memorial/work-3.jpg" alt="Конференция"
+                                                loading="lazy" />
+                                        </a>
+                                        <div class="img-caption">Конференция</div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= Tributes (Воспоминания) ======= -->
+            <section class="section" id="tributes">
+                <div class="container">
+                    <h2 class="mb-3" data-aos="fade-up" data-aos-delay="0">Воспоминания близких и друзей</h2>
+
+                    <div class="row">
+                        <div class="col-12" data-aos="fade-up" data-aos-delay="50">
+                            <div class="swiper et-swiper et-tributes">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="tribute-card">
+                                            <div class="fw-bold">Петров Александр</div>
+                                            <div class="small mb-2 opacity-75">коллега</div>
+                                            <div>Когда Александр Иванович проверял работы учеников, он был честен и
+                                                требователен. Показывал, как расти профессионально.</div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="tribute-card">
+                                            <div class="fw-bold">Иванова Валентина</div>
+                                            <div class="small mb-2 opacity-75">супруга</div>
+                                            <div>Саша был образцом правильного поведения. Он с заботой относился к
+                                                студентам и горел своим делом.</div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="tribute-card">
+                                            <div class="fw-bold">Иванов Пётр</div>
+                                            <div class="small mb-2 opacity-75">сын</div>
+                                            <div>Запомнился сильным, но очень чутким человеком. Помогал видеть главное и
+                                                не сдаваться.</div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="tribute-card">
+                                            <div class="fw-bold">Иванова Анна</div>
+                                            <div class="small mb-2 opacity-75">дочь</div>
+                                            <div>Всегда был рядом и поддерживал. Учил верить в себя и быть честным.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top"><i class="bi bi-arrow-up-short"></i></button>
+
+    <!-- ======= Vendors JS ======= -->
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/gsap/gsap.min.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendors/isotope/isotope.pkgd.min.js"></script>
+    <script src="assets/vendors/glightbox/glightbox.min.js"></script>
+    <script src="assets/vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendors/aos/aos.js"></script>
+
+    <!-- ======= Theme custom (optional) ======= -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+        // Init AOS (same behavior as landing)
+        AOS.init({ once: true });
+
+        // Init lightboxes
+        const lightbox = GLightbox({
+            selector: '.glightbox'
+        });
+
+        // Swiper options reused across sections
+        const baseSwiperOpts = {
+            loop: false,
+            centeredSlides: false,
+            spaceBetween: 16,
+            slidesPerView: 1,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: {
+                576: { slidesPerView: 1 },
+                768: { slidesPerView: 1 },
+                992: { slidesPerView: 1 },
+                1200: { slidesPerView: 1 }
+            }
+        };
+
+        // Family
+        const swFamily = new Swiper('.et-family', baseSwiperOpts);
+        console.log('[Memorial] Family swiper initialized'); // dev log
+
+        // Hobbies
+        const swHobbies = new Swiper('.et-hobbies', baseSwiperOpts);
+        console.log('[Memorial] Hobbies swiper initialized'); // dev log
+
+        // Work
+        const swWork = new Swiper('.et-work', baseSwiperOpts);
+        console.log('[Memorial] Work swiper initialized'); // dev log
+
+        // Tributes (3 cards per view on wide screens)
+        const swTributes = new Swiper('.et-tributes', {
+            ...baseSwiperOpts,
+            breakpoints: {
+                576: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1200: { slidesPerView: 3 }
+            }
+        });
+        console.log('[Memorial] Tributes swiper initialized'); // dev log
+    </script>
+</body>
+
+</html>
