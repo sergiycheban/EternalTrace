@@ -74,7 +74,7 @@ License: https://freebootstrap.net/license
 
   <script>
     gtag('js', new Date());
-    gtag('config', 'G-D9SRH7PQBR', { send_page_view: true });
+    gtag('config', 'G-D9SRH7PQBR', { send_page_view: false }); 
   </script>
 
 </head>
@@ -1055,12 +1055,9 @@ License: https://freebootstrap.net/license
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/send_email.js"></script>
   <script src="assets/js/analytics-events.js"></script>
+  <script src="assets/js/geo-detect.js"></script>
 
   <!-- End JavaScripts-->
-
-  <script>
-    window.USER_COUNTRY = "{{CF-IPCountry}}";
-  </script>
 
 
   <div id="consent-banner" class="consent-banner" style="display:none">
@@ -1075,64 +1072,79 @@ License: https://freebootstrap.net/license
 
   <script>
     (function () {
+      let pvSent = false;
+      window.sendPageViewOnce = function () {
+        if (pvSent || !window.gtag) return;
+        pvSent = true;
+        gtag('event', 'page_view', {
+          page_title: document.title,
+          page_location: location.href
+        });
+      };
+    })();
+  </script>
+
+  <script>
+    (function () {
       const KEY = 'et_consent_v1';
+      const EU_REGION = new Set(['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU',
+        'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']);
+
       const saved = localStorage.getItem(KEY);
 
-      const EU_REGION = new Set([
-        'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU',
-        'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES',
-        'SE', 'IS', 'LI', 'NO', 'GB', 'CH'
-      ]);
-
-      const raw = (window.USER_COUNTRY || '').toUpperCase();
-      const unknown = !raw || raw.includes('{');
-      const inEu = EU_REGION.has(raw);
-
-      const applyConsent = (granted) => {
+      function applyConsent(granted) {
         gtag('consent', 'update', {
           ad_storage: granted ? 'granted' : 'denied',
           ad_user_data: granted ? 'granted' : 'denied',
           ad_personalization: granted ? 'granted' : 'denied',
           analytics_storage: granted ? 'granted' : 'denied'
         });
-      };
-
-      if (saved === 'granted') applyConsent(true);
-      if (saved === 'denied') applyConsent(false);
-
-      if ((inEu || unknown) && saved !== 'granted' && saved !== 'denied') {
-        document.getElementById('consent-banner').style.display = 'block';
+        if (granted) sendPageViewOnce();
       }
 
-      if (!inEu && !unknown && saved !== 'granted' && saved !== 'denied') {
-        localStorage.setItem(KEY, 'granted');
-        applyConsent(true);
-      }
+      function runBannerLogic() {
+        const raw = (window.USER_COUNTRY || '').toUpperCase();
+        const unknown = !raw || raw === 'ZZ' || raw.includes('{');
+        const inEu = EU_REGION.has(raw);
 
-      // ✅ Accept handler
-      document.getElementById('consent-accept').addEventListener('click', () => {
-        localStorage.setItem(KEY, 'granted');
-        applyConsent(true);
-        document.getElementById('consent-banner').style.display = 'none';
+        if (saved === 'granted') applyConsent(true);
+        if (saved === 'denied') applyConsent(false);
 
-        if (window.gtag) {
-          console.log('[GA] event: page_view (after consent)');
-          gtag('event', 'page_view', {
-            page_title: document.title,
-            page_location: location.href
-          });
-          gtag('event', 'consent_granted', { source: 'banner' });
+        if ((inEu || unknown) && saved !== 'granted' && saved !== 'denied') {
+          document.getElementById('consent-banner').style.display = 'block';
         }
-      });
 
-      // ✅ Decline handler (отдельно, не внутри Accept!)
-      document.getElementById('consent-decline').addEventListener('click', () => {
-        localStorage.setItem(KEY, 'denied');
-        applyConsent(false);
-        document.getElementById('consent-banner').style.display = 'none';
-      });
+        if (!inEu && !unknown && saved !== 'granted' && saved !== 'denied') {
+          localStorage.setItem(KEY, 'granted');
+          applyConsent(true);
+        }
+
+        document.getElementById('consent-accept').addEventListener('click', () => {
+          localStorage.setItem(KEY, 'granted');
+          applyConsent(true);
+          document.getElementById('consent-banner').style.display = 'none';
+          if (window.gtag) gtag('event', 'consent_granted', { source: 'banner' });
+        });
+
+        document.getElementById('consent-decline').addEventListener('click', () => {
+          localStorage.setItem(KEY, 'denied');
+          applyConsent(false);
+          document.getElementById('consent-banner').style.display = 'none';
+        });
+      }
+
+      if (window.USER_COUNTRY) {
+        runBannerLogic();
+      } else {
+        const t = setTimeout(runBannerLogic, 2000); // fallback
+        window.addEventListener('user-country-ready', () => {
+          clearTimeout(t);         // не даём запуститься второй раз
+          runBannerLogic();
+        }, { once: true });
+      }
     })();
   </script>
+
 
 </body>
 
