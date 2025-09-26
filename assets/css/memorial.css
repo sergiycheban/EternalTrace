@@ -1,11 +1,8 @@
-/* Local, minimal tokens to match the soft look from reference */
 :root {
   --et-soft-bg: #f6f1e8;
-  /* warm beige for soft panels */
   --et-soft-green: #d8e7d0;
-  /* soft green for chips/badges */
   --et-border: rgba(0, 0, 0, .08);
-  /* subtle border */
+  --bs-primary: #215C5C;
 }
 
 .memorial-wrap .slogan {
@@ -29,7 +26,7 @@
   display: block;
   width: 100%;
   background: var(--et-soft-green);
-  color: var(--bs-heading-color, #16181B);
+  color: var(--bs-primary);
   border-radius: .75rem;
   padding: .5rem 1rem;
   font-weight: 700;
@@ -47,17 +44,17 @@
   border: 1px solid var(--et-border);
   border-radius: .75rem;
   padding: .85rem 1rem;
-  /* background: rgba(255, 255, 255, .6); */
 }
 
 .memorial-wrap .section-chip {
   display: inline-block;
   background: var(--et-soft-green);
-  color: var(--bs-heading-color, #16181B);
+  color: var(--bs-primary);
   border-radius: 999px;
-  padding: .35rem .9rem;
+  padding: .5rem 1.2rem;
   font-weight: 700;
-  margin-bottom: .75rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 /* Swiper card look */
@@ -89,4 +86,83 @@
   max-width: 150px;
   height: auto;
   opacity: 0.9;
+}
+
+.memorial-wrap .swiper-button-prev,
+.memorial-wrap .swiper-button-next {
+  color: var(--et-soft-green);
+}
+
+.memorial-wrap .swiper-button-prev:hover,
+.memorial-wrap .swiper-button-next:hover {
+  color: var(--et-soft-green);
+  opacity: 0.8;
+}
+
+.memorial-wrap .et-tributes .swiper-button-prev,
+.memorial-wrap .et-tributes .swiper-button-next {
+  display: none !important;
+}
+
+.memorial-wrap .et-swiper .swiper-button-prev,
+.memorial-wrap .et-swiper .swiper-button-next {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(33, 92, 92, .25);
+  opacity: .95;
+
+  caret-color: transparent;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.memorial-wrap .et-swiper .swiper-button-prev::after,
+.memorial-wrap .et-swiper .swiper-button-next::after {
+  font-size: 18px;
+}
+
+.memorial-wrap .et-swiper .swiper-button-prev:hover,
+.memorial-wrap .et-swiper .swiper-button-next:hover {
+  opacity: 1;
+  filter: brightness(0.95);
+}
+
+.memorial-wrap .et-swiper .swiper-button-prev:active,
+.memorial-wrap .et-swiper .swiper-button-next:active {
+  transform: translateY(-50%) scale(0.97);
+}
+
+.memorial-wrap .et-family .swiper-button-prev,
+.memorial-wrap .et-hobbies .swiper-button-prev,
+.memorial-wrap .et-work .swiper-button-prev {
+  left: 8px;
+}
+
+
+.memorial-wrap .et-family .swiper-button-next,
+.memorial-wrap .et-hobbies .swiper-button-next,
+.memorial-wrap .et-work .swiper-button-next {
+  right: 8px;
+}
+
+
+@media (max-width: 576px) {
+
+  .memorial-wrap .et-swiper .swiper-button-prev,
+  .memorial-wrap .et-swiper .swiper-button-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  .memorial-wrap .et-swiper .swiper-button-prev::after,
+  .memorial-wrap .et-swiper .swiper-button-next::after {
+    font-size: 16px;
+  }
 }
