@@ -1438,8 +1438,8 @@ h6 {
   right: 0;
   bottom: 0;
   z-index: 9999;
-  background: #16181B;
-  color: #fff;
+  background: var(--bs-heading-color);
+  color: var(--bs-white);
   padding: 14px
 }
 
@@ -1450,7 +1450,13 @@ h6 {
   gap: 12px;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+}
+
+.consent-banner .inner>div:last-child {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
 }
 
 .consent-banner button {
@@ -1461,11 +1467,23 @@ h6 {
 }
 
 .consent-accept {
-  background: #215C5C;
-  color: #fff
+  background: var(--bs-primary);
+  color: var(--bs-white);
 }
 
 .consent-decline {
-  background: #494B5B;
-  color: #fff
+  background: var(--bs-body-color);
+  color: var(--bs-white);
+}
+
+@media (max-width: 576px) {
+  .consent-banner .inner {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .consent-banner .inner>div:last-child {
+    align-self: flex-end;
+  }
 }
