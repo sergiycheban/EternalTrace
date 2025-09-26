@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--
+  Privacy Policy page for EternalTrace
+  Notes:
+  - Keep this file next to index.html (same asset paths).
+  - TODO: Replace [Company Legal Name] and [Registered Address] if/when you have them.
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EternalTrace — Privacy Policy</title>
+
+    <link rel="icon" type="image/svg" href="assets/images/logo-for-tab.svg" />
+
+    <!-- ======= Google Font =======-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- End Google Font-->
+
+    <!-- ======= Styles =======-->
+    <link href="assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="assets/vendors/glightbox/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendors/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/vendors/aos/aos.css" rel="stylesheet" />
+    <!-- End Styles-->
+
+    <!-- ======= Theme Style =======-->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- End Theme Style-->
+
+    <!-- ======= Apply theme early to avoid flicker =======-->
+    <script>
+        // Apply the theme as early as possible to avoid flicker
+        (function () {
+            const storedTheme = localStorage.getItem("theme") || "dark";
+            document.documentElement.setAttribute("data-bs-theme", storedTheme);
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- ======= Site Wrap =======-->
+    <div class="site-wrap">
+        <!-- ======= Header (same as index) =======-->
+        <header class="fbs__net-navbar navbar navbar-expand-lg dark" aria-label="freebootstrap.net navbar">
+            <div class="container d-flex align-items-center justify-content-between">
+                <!-- Start Logo-->
+                <a class="navbar-brand w-auto" href="index.html">
+                    <img class="logo dark img-fluid logo" src="assets/images/logo.svg" alt="EternalTrace logo" />
+                    <img class="logo light img-fluid logo" src="assets/images/logo.svg" alt="EternalTrace logo" />
+                </a>
+                <!-- End Logo-->
+
+                <!-- Start offcanvas-->
+                <div class="offcanvas offcanvas-start w-75" id="fbs__net-navbars" tabindex="-1"
+                    aria-labelledby="fbs__net-navbarsLabel">
+                    <div class="offcanvas-header">
+                        <div class="offcanvas-header-logo">
+                            <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
+                                <img class="logo dark img-fluid logo" src="assets/images/logo.svg"
+                                    alt="EternalTrace logo" />
+                                <img class="logo light img-fluid logo" src="assets/images/logo.svg"
+                                    alt="EternalTrace logo" />
+                            </a>
+                        </div>
+                        <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body align-items-lg-center">
+                        <!-- Same navigation, but links point to index anchors -->
+                        <ul class="navbar-nav nav me-auto ps-lg-5 mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#pricing">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#how-it-works">How It Works</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#contact">Registration</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/memorial">Memorial Demo</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End offcanvas-->
+
+                <div class="ms-auto w-auto">
+                    <div class="header-social d-flex align-items-center gap-1">
+                        <a class="btn btn-primary py-2" href="index.html#contact">Get Started</a>
+                        <button class="fbs__net-navbar-toggler justify-content-center align-items-center ms-auto"
+                            data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars"
+                            aria-controls="fbs__net-navbars" aria-label="Toggle navigation" aria-expanded="false">
+                            <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="21" x2="3" y1="6" y2="6"></line>
+                                <line x1="15" x2="3" y1="12" y2="12"></line>
+                                <line x1="17" x2="3" y1="18" y2="18"></line>
+                            </svg>
+                            <svg class="fbs__net-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header-->
+
+        <!-- ======= Main =======-->
+        <main>
+            <!-- ======= Hero (compact) =======-->
+            <section class="section hero__v6" id="policy-hero">
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-lg-12">
+                            <span class="hero-subtitle text-uppercase" data-aos="fade-up" data-aos-delay="0">Privacy
+                                Policy</span>
+                            <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="100">
+                                Your Privacy. Our Responsibility.
+                            </h1>
+                            <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                                This Privacy Policy explains how EternalTrace collects, uses, shares, and protects
+                                personal data.
+                                It applies to our website, forms, and services offered to funeral agencies and families.
+                            </p>
+                            <p class="text-opacity-75 mb-0" data-aos="fade-up" data-aos-delay="250">
+                                <small>Last updated: 26 September 2025</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======= Policy Body =======-->
+            <section class="" id="privacy-policy">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Quick nav -->
+                            <div class="p-4 rounded-4 mb-5" style="background: var(--dropdown-bg);" data-aos="fade-up">
+                                <h2 class="mb-3">Contents</h2>
+                                <ul class="list-unstyled d-flex flex-column gap-2">
+                                    <li><a href="#who-we-are" class="nav-link p-0">1. Who We Are (Controller)</a></li>
+                                    <li><a href="#data-we-collect" class="nav-link p-0">2. Data We Collect</a></li>
+                                    <li><a href="#how-we-use" class="nav-link p-0">3. How We Use Your Data (Purposes &
+                                            Legal Bases)</a></li>
+                                    <li><a href="#sharing" class="nav-link p-0">4. Sharing & Processors</a></li>
+                                    <li><a href="#international" class="nav-link p-0">5. International Transfers</a>
+                                    </li>
+                                    <li><a href="#retention" class="nav-link p-0">6. Data Retention</a></li>
+                                    <li><a href="#security" class="nav-link p-0">7. Security</a></li>
+                                    <li><a href="#cookies" class="nav-link p-0">8. Cookies & Analytics</a></li>
+                                    <li><a href="#rights" class="nav-link p-0">9. Your Rights (GDPR)</a></li>
+                                    <li><a href="#children" class="nav-link p-0">10. Children’s Data</a></li>
+                                    <li><a href="#changes" class="nav-link p-0">11. Changes to This Policy</a></li>
+                                    <li><a href="#contact-us" class="nav-link p-0">12. Contact Us</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 1. Who we are -->
+                            <div id="who-we-are" class="mb-5" data-aos="fade-up" data-aos-delay="50">
+                                <h2 class="mb-3">1. Who We Are (Controller)</h2>
+                                <p>
+                                    EternalTrace (“we”, “us”, “our”) is the controller of your personal data when you
+                                    visit our website,
+                                    submit forms, or use our services via a funeral agency partner.
+                                </p>
+                                <p class="mb-1"><strong>Controller:</strong> EternalTrace</p>
+                                <p class="mb-1"><strong>Email:</strong> <a
+                                        href="mailto:eternaltrace.org@gmail.com">eternaltrace.org@gmail.com</a></p>
+                                <!-- TODO: If you have a legal entity and address, add them below -->
+                                <p class="mb-0"><em><!-- TODO: [Company Legal Name], [Registered Address] --></em></p>
+                            </div>
+
+                            <!-- 2. Data we collect -->
+                            <div id="data-we-collect" class="mb-5" data-aos="fade-up" data-aos-delay="100">
+                                <h2 class="mb-3">2. Data We Collect</h2>
+                                <ul class="list-unstyled d-flex flex-column gap-2">
+                                    <li><strong>Agency registration data:</strong> company/agency name, city, contact
+                                        email, and any information you provide in free-text fields.</li>
+                                    <li><strong>Operational data (via agency dashboard/forms):</strong> memorial content
+                                        provided by families (photos, biography, tributes, stories), plus agency
+                                        identifiers to brand pages.</li>
+                                    <li><strong>Technical data:</strong> IP address, device/browser info, pages viewed,
+                                        referral source, and timestamps (collected via standard web logs or analytics,
+                                        where enabled).</li>
+                                    <li><strong>Communication data:</strong> emails and messages you send to us.</li>
+                                    <li><strong>Payment/activation metadata (agency side only):</strong> activation
+                                        status, timestamps, and internal references. We do not process card data on our
+                                        site unless explicitly stated.</li>
+                                </ul>
+                                <p class="mb-0">Providing certain data may be necessary to register your agency or to
+                                    activate memorial pages.</p>
+                            </div>
+
+                            <!-- 3. How we use / legal bases -->
+                            <div id="how-we-use" class="mb-5" data-aos="fade-up" data-aos-delay="150">
+                                <h2 class="mb-3">3. How We Use Your Data (Purposes & Legal Bases)</h2>
+                                <ul class="list-unstyled d-flex flex-column gap-3">
+                                    <li>
+                                        <strong>Service delivery & account management</strong> — to register agencies,
+                                        provide dashboard access,
+                                        generate memorial pages and QR codes, and support branded presentation.<br />
+                                        <em>Legal basis:</em> performance of a contract (Art. 6(1)(b) GDPR) and/or
+                                        legitimate interests (Art. 6(1)(f)).
+                                    </li>
+                                    <li>
+                                        <strong>Customer support & communications</strong> — to respond to inquiries and
+                                        provide updates.<br />
+                                        <em>Legal basis:</em> legitimate interests (Art. 6(1)(f)) and/or performance of
+                                        a contract (Art. 6(1)(b)).
+                                    </li>
+                                    <li>
+                                        <strong>Security & fraud prevention</strong> — to protect services and users,
+                                        and maintain integrity of memorial content.<br />
+                                        <em>Legal basis:</em> legitimate interests (Art. 6(1)(f)) and legal obligations
+                                        (Art. 6(1)(c)).
+                                    </li>
+                                    <li>
+                                        <strong>Analytics & improvement</strong> — to understand usage and improve UX
+                                        (where enabled and lawfully obtained).<br />
+                                        <em>Legal basis:</em> consent (Art. 6(1)(a)) where required, otherwise
+                                        legitimate interests (Art. 6(1)(f)).
+                                    </li>
+                                    <li>
+                                        <strong>Legal compliance</strong> — to comply with applicable laws and respond
+                                        to lawful requests.<br />
+                                        <em>Legal basis:</em> legal obligation (Art. 6(1)(c)).
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 4. Sharing -->
+                            <div id="sharing" class="mb-5" data-aos="fade-up" data-aos-delay="200">
+                                <h2 class="mb-3">4. Sharing & Processors</h2>
+                                <p>We do not sell personal data. We may share data with:</p>
+                                <ul class="list-unstyled d-flex flex-column gap-2">
+                                    <li><strong>Service providers (processors):</strong> hosting (e.g., Google Cloud),
+                                        form processing (e.g., Formspree), analytics (e.g., Google Analytics, if used),
+                                        email providers. These vendors process data under our instructions and
+                                        appropriate safeguards.</li>
+                                    <li><strong>Agency partners:</strong> where necessary to deliver branded memorial
+                                        pages and support families, data relevant to the specific memorial may be
+                                        visible to the agency offering the service.</li>
+                                    <li><strong>Legal & compliance:</strong> where required by law or to protect rights,
+                                        safety, and integrity.</li>
+                                </ul>
+                            </div>
+
+                            <!-- 5. International transfers -->
+                            <div id="international" class="mb-5" data-aos="fade-up" data-aos-delay="250">
+                                <h2 class="mb-3">5. International Transfers</h2>
+                                <p>
+                                    If data is transferred outside the EEA/UK, we implement appropriate safeguards such
+                                    as
+                                    Standard Contractual Clauses (SCCs) or rely on adequacy decisions where applicable.
+                                </p>
+                            </div>
+
+                            <!-- 6. Retention -->
+                            <div id="retention" class="mb-5" data-aos="fade-up" data-aos-delay="300">
+                                <h2 class="mb-3">6. Data Retention</h2>
+                                <ul class="list-unstyled d-flex flex-column gap-2">
+                                    <li><strong>Memorial pages:</strong> intended to remain online indefinitely once
+                                        activated, unless removal is requested by authorized parties or required by law.
+                                    </li>
+                                    <li><strong>Agency records:</strong> retained while the agency relationship exists
+                                        and for a reasonable period thereafter to meet legal, accounting, or operational
+                                        requirements.</li>
+                                    <li><strong>Support emails/logs:</strong> retained as necessary to resolve issues
+                                        and maintain service integrity.</li>
+                                </ul>
+                            </div>
+
+                            <!-- 7. Security -->
+                            <div id="security" class="mb-5" data-aos="fade-up" data-aos-delay="350">
+                                <h2 class="mb-3">7. Security</h2>
+                                <p class="mb-2">
+                                    We use industry-standard safeguards, including <strong>TLS 1.3</strong> in transit
+                                    and
+                                    <strong>AES-256</strong> encryption at rest (for applicable storage), hardened
+                                    infrastructure,
+                                    access controls, and backups across multiple regions.
+                                </p>
+                                <p class="mb-0">
+                                    No system is 100% secure; if you suspect unauthorized access, contact us immediately
+                                    at
+                                    <a href="mailto:eternaltrace.org@gmail.com">eternaltrace.org@gmail.com</a>.
+                                </p>
+                            </div>
+
+                            <!-- 8. Cookies -->
+                            <div id="cookies" class="mb-5" data-aos="fade-up" data-aos-delay="400">
+                                <h2 class="mb-3">8. Cookies & Analytics</h2>
+                                <p>
+                                    We may use cookies and similar technologies to operate the site, remember
+                                    preferences, and—where enabled—
+                                    analyze usage. Non-essential cookies are used only with your consent where required
+                                    by law.
+                                </p>
+                                <ul class="list-unstyled d-flex flex-column gap-2">
+                                    <li><strong>Essential cookies:</strong> required for core functionality (cannot be
+                                        disabled).</li>
+                                    <li><strong>Analytics cookies:</strong> help us understand site performance and
+                                        improve services.</li>
+                                </ul>
+                                <!-- TODO: If you deploy a cookie banner/manager, link to it below -->
+                                <p class="mb-0">
+                                    <em><!-- TODO: Link to Cookie Settings / Consent Manager if implemented --></em>
+                                </p>
+                            </div>
+
+                            <!-- 9. Rights -->
+                            <div id="rights" class="mb-5" data-aos="fade-up" data-aos-delay="450">
+                                <h2 class="mb-3">9. Your Rights (GDPR)</h2>
+                                <p>
+                                    If you are in the EEA/UK, you have the right to request access, rectification,
+                                    erasure,
+                                    restriction of processing, portability, and to object to processing. Where
+                                    processing is based on
+                                    consent, you may withdraw consent at any time without affecting the lawfulness of
+                                    processing prior to withdrawal.
+                                </p>
+                                <p class="mb-1">You also have the right to lodge a complaint with your local supervisory
+                                    authority.</p>
+                                <p class="mb-0">
+                                    To exercise your rights, contact us at
+                                    <a href="mailto:eternaltrace.org@gmail.com">eternaltrace.org@gmail.com</a>.
+                                    We may need to verify your identity before fulfilling your request.
+                                </p>
+                            </div>
+
+                            <!-- 10. Children -->
+                            <div id="children" class="mb-5" data-aos="fade-up" data-aos-delay="500">
+                                <h2 class="mb-3">10. Children’s Data</h2>
+                                <p>
+                                    Our services are directed to agencies and adult family members. We do not knowingly
+                                    collect personal data
+                                    directly from children. If you believe a child has provided personal data to us,
+                                    please contact us so we can take appropriate steps.
+                                </p>
+                            </div>
+
+                            <!-- 11. Changes -->
+                            <div id="changes" class="mb-5" data-aos="fade-up" data-aos-delay="550">
+                                <h2 class="mb-3">11. Changes to This Policy</h2>
+                                <p>
+                                    We may update this Policy from time to time. The “Last updated” date at the top
+                                    indicates the latest version.
+                                    Substantive changes will be communicated where required by law.
+                                </p>
+                            </div>
+
+                            <!-- 12. Contact -->
+                            <div id="contact-us" class="mb-2" data-aos="fade-up" data-aos-delay="600">
+                                <h2 class="mb-3">12. Contact Us</h2>
+                                <p class="mb-1"><strong>EternalTrace</strong></p>
+                                <p class="mb-1">Email: <a
+                                        href="mailto:eternaltrace.org@gmail.com">eternaltrace.org@gmail.com</a></p>
+                                <!-- TODO: Add legal address when available -->
+                                <p class="mb-0">
+                                    <em><!-- TODO: [Registered Address], Customer support hours, etc. --></em>
+                                </p>
+                            </div>
+
+                            <div class="mt-4">
+                                <a class="btn btn-white-outline d-inline-flex align-items-center gap-2"
+                                    href="index.html#contact">
+                                    <i class="bi bi-arrow-left"></i>
+                                    Back to Registration
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <br>
+            <!-- ======= Footer (same as index) =======-->
+            <footer class="footer pt-5 pb-5">
+                <div class="container">
+                    <div class="row justify-content-between mb-5 g-xl-5">
+                        <div class="col-md-4 mb-5 mb-lg-0">
+                            <h3 class="mb-3">About</h3>
+                            <p class="mb-4">
+                                With EternalTrace, agencies add value for families and earn
+                                extra revenue, risk-free and branded as their own service.
+                            </p>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row g-2">
+                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                                    <h3 class="mb-3">Company</h3>
+                                    <ul class="list-unstyled">
+                                        <li class="nav-item"><a class="nav-link" href="/memorial">Memorial Demo</a></li>
+                                        <!-- If you add Terms page later, link it here -->
+                                        <!-- <li><a href="page-terms-conditions.html">Terms &amp; Conditions</a></li> -->
+                                        <li><a href="page-privacy-policy.html" aria-current="page">Privacy Policy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 quick-contact">
+                                    <h3 class="mb-3">Contact</h3>
+                                    <a class="d-flex mb-3" href="mailto:eternaltrace.org@gmail.com">
+                                        <i class="bi bi-envelope-fill me-3"></i>
+                                        <span>eternaltrace.org@gmail.com</span>
+                                    </a>
+                                    <a class="d-flex mb-3" href="https://eternaltrace.org">
+                                        <i class="bi bi-globe me-3"></i>
+                                        <span>eternaltrace.org</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row credits pt-3">
+                        <div class="col-xl-8 text-center text-xl-start mb-3 mb-xl-0">
+                            &copy;
+                            <script>document.write(new Date().getFullYear());</script> EternalTrace. All rights
+                            reserved. A modern memorial solution for funeral agencies.
+                        </div>
+                        <div
+                            class="col-xl-4 justify-content-start justify-content-xl-end quick-links d-flex flex-column flex-xl-row text-center text-xl-start gap-1">
+                            Powered by EternalTrace
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer-->
+        </main>
+    </div>
+
+    <!-- ======= Back to Top =======-->
+    <button id="back-to-top"><i class="bi bi-arrow-up-short"></i></button>
+
+    <!-- ======= Javascripts =======-->
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/gsap/gsap.min.js"></script>
+    <script src="assets/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendors/isotope/isotope.pkgd.min.js"></script>
+    <script src="assets/vendors/glightbox/glightbox.min.js"></script>
+    <script src="assets/vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendors/aos/aos.js"></script>
+    <script src="assets/vendors/purecounter/purecounter.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End JavaScripts-->
+</body>
+
+</html>

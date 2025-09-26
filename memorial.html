@@ -42,14 +42,76 @@
 
 <body>
     <div class="site-wrap memorial-wrap">
+        <header class="fbs__net-navbar navbar navbar-expand-lg dark" aria-label="freebootstrap.net navbar">
+            <div class="container d-flex align-items-center justify-content-between">
+                <!-- Start Logo-->
+                <a class="navbar-brand w-auto" href="index.html">
+                    <img class="logo dark img-fluid logo" src="assets/images/logo.svg" alt="EternalTrace logo" />
+                    <img class="logo light img-fluid logo" src="assets/images/logo.svg" alt="EternalTrace logo" />
+                </a>
+                <!-- End Logo-->
 
+                <!-- Start offcanvas-->
+                <div class="offcanvas offcanvas-start w-75" id="fbs__net-navbars" tabindex="-1"
+                    aria-labelledby="fbs__net-navbarsLabel">
+                    <div class="offcanvas-header">
+                        <div class="offcanvas-header-logo">
+                            <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
+                                <img class="logo dark img-fluid logo" src="assets/images/logo.svg"
+                                    alt="EternalTrace logo" />
+                                <img class="logo light img-fluid logo" src="assets/images/logo.svg"
+                                    alt="EternalTrace logo" />
+                            </a>
+                        </div>
+                        <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body align-items-lg-center">
+                        <!-- Same navigation, but links point to index anchors -->
+                        <ul class="navbar-nav nav me-auto ps-lg-5 mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#pricing">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#how-it-works">How It Works</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#contact">Registration</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/memorial">Memorial Demo</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End offcanvas-->
+
+                <div class="ms-auto w-auto">
+                    <div class="header-social d-flex align-items-center gap-1">
+                        <a class="btn btn-primary py-2" href="index.html#contact">Get Started</a>
+                        <button class="fbs__net-navbar-toggler justify-content-center align-items-center ms-auto"
+                            data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars"
+                            aria-controls="fbs__net-navbars" aria-label="Toggle navigation" aria-expanded="false">
+                            <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="21" x2="3" y1="6" y2="6"></line>
+                                <line x1="15" x2="3" y1="12" y2="12"></line>
+                                <line x1="17" x2="3" y1="18" y2="18"></line>
+                            </svg>
+                            <svg class="fbs__net-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
         <main>
             <!-- ======= Title / Intro ======= -->
-            <section class="section" id="memorial-top">
+            <section class="section hero__v6" id="memorial-top">
                 <div class="container">
-
-
-                    <div class="row mt-4 g-3">
+                    <div class="row g-3">
                         <div class="col-12">
                             <span class="name-badge" data-aos="fade-up" data-aos-delay="50">
                                 Иванов Александр Иванович
@@ -307,7 +369,58 @@
                     </div>
                 </div>
             </section>
-
+            <br>
+            <!-- ======= Footer (same as index) =======-->
+            <footer class="footer pt-5 pb-5">
+                <div class="container">
+                    <div class="row justify-content-between mb-5 g-xl-5">
+                        <div class="col-md-4 mb-5 mb-lg-0">
+                            <h3 class="mb-3">About</h3>
+                            <p class="mb-4">
+                                With EternalTrace, agencies add value for families and earn
+                                extra revenue, risk-free and branded as their own service.
+                            </p>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row g-2">
+                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                                    <h3 class="mb-3">Company</h3>
+                                    <ul class="list-unstyled">
+                                        <li class="nav-item"><a class="nav-link" href="/memorial">Memorial Demo</a></li>
+                                        <!-- If you add Terms page later, link it here -->
+                                        <!-- <li><a href="page-terms-conditions.html">Terms &amp; Conditions</a></li> -->
+                                        <li><a href="page-privacy-policy.html" aria-current="page">Privacy Policy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 quick-contact">
+                                    <h3 class="mb-3">Contact</h3>
+                                    <a class="d-flex mb-3" href="mailto:eternaltrace.org@gmail.com">
+                                        <i class="bi bi-envelope-fill me-3"></i>
+                                        <span>eternaltrace.org@gmail.com</span>
+                                    </a>
+                                    <a class="d-flex mb-3" href="https://eternaltrace.org">
+                                        <i class="bi bi-globe me-3"></i>
+                                        <span>eternaltrace.org</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row credits pt-3">
+                        <div class="col-xl-8 text-center text-xl-start mb-3 mb-xl-0">
+                            &copy;
+                            <script>document.write(new Date().getFullYear());</script> EternalTrace. All rights
+                            reserved. A modern memorial solution for funeral agencies.
+                        </div>
+                        <div
+                            class="col-xl-4 justify-content-start justify-content-xl-end quick-links d-flex flex-column flex-xl-row text-center text-xl-start gap-1">
+                            Powered by EternalTrace
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer-->
         </main>
     </div>
 

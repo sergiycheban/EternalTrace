@@ -8,6 +8,7 @@ Buy Pro
 :root,
 [data-bs-theme=light] {
   --bs-body-bg: #FBF7ED;
+  --bs-white: #FBF7ED;
   --bs-body-color: #494B5B;
   --bs-primary: #215C5C;
   --bs-primary-rgb: 33, 92, 92;
@@ -868,7 +869,7 @@ h6 {
 }
 
 .hero__v6 {
-  padding: 10rem 0 !important;
+  padding: 8rem 0 !important;
 }
 
 .hero__v6 .hero-subtitle {
