@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Basic client-side validation
         if (!form.checkValidity()) {
-            console.warn('Form validation failed'); // console log in English
+            console.warn('Form validation failed');
             form.reportValidity();
             return;
         }
@@ -34,18 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (res.ok) {
-                console.info('Form submitted successfully'); // console log in English
+                console.info('Form submitted successfully');
                 successEl?.classList.remove('d-none');
                 errorEl?.classList.add('d-none');
                 form.reset();
             } else {
                 const err = await res.json().catch(() => ({}));
-                console.error('Form submission error:', err); // console log in English
+                console.error('Form submission error:', err);
                 errorEl?.classList.remove('d-none');
                 successEl?.classList.add('d-none');
             }
         } catch (ex) {
-            console.error('Network or JS error:', ex); // console log in English
+            console.error('Network or JS error:', ex);
             errorEl?.classList.remove('d-none');
             successEl?.classList.add('d-none');
         } finally {
