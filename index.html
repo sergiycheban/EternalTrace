@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<!--
-Template name: Nova
-Template author: FreeBootstrap.net
-Author website: https://freebootstrap.net/
-License: https://freebootstrap.net/license
--->
 <html lang="en">
 
 <head>
@@ -16,27 +10,19 @@ License: https://freebootstrap.net/license
 
   <link rel="icon" type="image/svg" href="assets/images/logo-for-tab.svg" />
 
-  <!-- ======= Google Font =======-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
-  <!-- End Google Font-->
 
-  <!-- ======= Styles =======-->
   <link href="assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet" />
   <link href="assets/vendors/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link href="assets/vendors/glightbox/glightbox.min.css" rel="stylesheet" />
   <link href="assets/vendors/swiper/swiper-bundle.min.css" rel="stylesheet" />
   <link href="assets/vendors/aos/aos.css" rel="stylesheet" />
-  <!-- End Styles-->
 
-  <!-- ======= Theme Style =======-->
   <link href="assets/css/style.css" rel="stylesheet" />
-  <!-- End Theme Style-->
 
-  <!-- ======= Apply theme =======-->
   <script>
-    // Apply the theme as early as possible to avoid flicker
     (function () {
       const storedTheme = localStorage.getItem("theme") || "dark";
       document.documentElement.setAttribute("data-bs-theme", storedTheme);
@@ -1038,6 +1024,15 @@ License: https://freebootstrap.net/license
       <!-- End Footer-->
     </main>
   </div>
+  <div id="consent-banner" class="consent-banner" style="display:none">
+    <div class="inner">
+      <div>We use cookies for analytics. You can change your choice at any time.</div>
+      <div>
+        <button id="consent-accept" class="consent-accept">Accept</button>
+        <button id="consent-decline" class="consent-decline">Decline</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ======= Back to Top =======-->
   <button id="back-to-top"><i class="bi bi-arrow-up-short"></i></button>
@@ -1054,97 +1049,10 @@ License: https://freebootstrap.net/license
   <script src="assets/vendors/purecounter/purecounter.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/send_email.js"></script>
-  <script src="assets/js/analytics-events.js"></script>
   <script src="assets/js/geo-detect.js"></script>
-
+  <script src="assets/js/consent.js"></script>
+  <script src="assets/js/analytics-events.js"></script>
   <!-- End JavaScripts-->
-
-
-  <div id="consent-banner" class="consent-banner" style="display:none">
-    <div class="inner">
-      <div>We use cookies for analytics. You can change your choice at any time.</div>
-      <div>
-        <button id="consent-accept" class="consent-accept">Accept</button>
-        <button id="consent-decline" class="consent-decline">Decline</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      let pvSent = false;
-      window.sendPageViewOnce = function () {
-        if (pvSent || !window.gtag) return;
-        pvSent = true;
-        gtag('event', 'page_view', {
-          page_title: document.title,
-          page_location: location.href
-        });
-      };
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const KEY = 'et_consent_v1';
-      const EU_REGION = new Set(['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU',
-        'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']);
-
-      const saved = localStorage.getItem(KEY);
-
-      function applyConsent(granted) {
-        gtag('consent', 'update', {
-          ad_storage: granted ? 'granted' : 'denied',
-          ad_user_data: granted ? 'granted' : 'denied',
-          ad_personalization: granted ? 'granted' : 'denied',
-          analytics_storage: granted ? 'granted' : 'denied'
-        });
-        if (granted) sendPageViewOnce();
-      }
-
-      function runBannerLogic() {
-        const raw = (window.USER_COUNTRY || '').toUpperCase();
-        const unknown = !raw || raw === 'ZZ' || raw.includes('{');
-        const inEu = EU_REGION.has(raw);
-
-        if (saved === 'granted') applyConsent(true);
-        if (saved === 'denied') applyConsent(false);
-
-        if ((inEu || unknown) && saved !== 'granted' && saved !== 'denied') {
-          document.getElementById('consent-banner').style.display = 'block';
-        }
-
-        if (!inEu && !unknown && saved !== 'granted' && saved !== 'denied') {
-          localStorage.setItem(KEY, 'granted');
-          applyConsent(true);
-        }
-
-        document.getElementById('consent-accept').addEventListener('click', () => {
-          localStorage.setItem(KEY, 'granted');
-          applyConsent(true);
-          document.getElementById('consent-banner').style.display = 'none';
-          if (window.gtag) gtag('event', 'consent_granted', { source: 'banner' });
-        });
-
-        document.getElementById('consent-decline').addEventListener('click', () => {
-          localStorage.setItem(KEY, 'denied');
-          applyConsent(false);
-          document.getElementById('consent-banner').style.display = 'none';
-        });
-      }
-
-      if (window.USER_COUNTRY) {
-        runBannerLogic();
-      } else {
-        const t = setTimeout(runBannerLogic, 2000); // fallback
-        window.addEventListener('user-country-ready', () => {
-          clearTimeout(t);         // не даём запуститься второй раз
-          runBannerLogic();
-        }, { once: true });
-      }
-    })();
-  </script>
-
 
 </body>
 
