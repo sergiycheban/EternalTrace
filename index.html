@@ -42,44 +42,65 @@ License: https://freebootstrap.net/license
       document.documentElement.setAttribute("data-bs-theme", storedTheme);
     })();
   </script>
+
+  <!-- Google Analytics 4 + Consent Mode v2 (regional) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    }, {
+      region: [
+        'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK',
+        'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT',
+        'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO',
+        'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'
+      ]
+    });
+
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D9SRH7PQBR"></script>
+
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-D9SRH7PQBR', { send_page_view: true });
+  </script>
+
 </head>
 
 <body>
-  <!-- ======= Site Wrap =======-->
   <div class="site-wrap">
-    <!-- ======= Header =======-->
     <header class="fbs__net-navbar navbar navbar-expand-lg dark" aria-label="freebootstrap.net navbar">
       <div class="container d-flex align-items-center justify-content-between">
-        <!-- Start Logo-->
         <a class="navbar-brand w-auto" href="">
-          <!-- If you use a text logo, uncomment this if it is commented-->
-          <!-- Vertex-->
 
-          <!-- If you plan to use an image logo, uncomment this if it is commented-->
-
-          <!-- logo dark--><img class="logo dark img-fluid logo" src="assets/images/logo.svg"
+          <img class="logo dark img-fluid logo" src="assets/images/logo.svg"
             alt="FreeBootstrap.net image placeholder" />
 
-          <!-- logo light--><img class="logo light img-fluid logo" src="assets/images/logo.svg"
+          <img class="logo light img-fluid logo" src="assets/images/logo.svg"
             alt="FreeBootstrap.net image placeholder" />
         </a>
-        <!-- End Logo-->
 
-        <!-- Start offcanvas-->
         <div class="offcanvas offcanvas-start w-75" id="fbs__net-navbars" tabindex="-1"
           aria-labelledby="fbs__net-navbarsLabel">
           <div class="offcanvas-header">
             <div class="offcanvas-header-logo">
-              <!-- If you use a text logo, uncomment this if it is commented-->
-
-              <!-- h5#fbs__net-navbarsLabel.offcanvas-title Vertex-->
-
-              <!-- If you plan to use an image logo, uncomment this if it is commented-->
               <a class="logo-link" id="fbs__net-navbarsLabel" href="index.html">
-                <!-- logo dark--><img class="logo dark img-fluid logo" src="assets/images/logo.svg"
+                <img class="logo dark img-fluid logo" src="assets/images/logo.svg"
                   alt="FreeBootstrap.net image placeholder" />
 
-                <!-- logo light--><img class="logo light img-fluid logo" src="assets/images/logo.svg"
+                <img class="logo light img-fluid logo" src="assets/images/logo.svg"
                   alt="FreeBootstrap.net image placeholder" /></a>
             </div>
             <button class="btn-close btn-close-black" type="button" data-bs-dismiss="offcanvas"
@@ -1033,7 +1054,86 @@ License: https://freebootstrap.net/license
   <script src="assets/vendors/purecounter/purecounter.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/send_email.js"></script>
+  <script src="assets/js/analytics-events.js"></script>
+
   <!-- End JavaScripts-->
+
+  <script>
+    window.USER_COUNTRY = "{{CF-IPCountry}}";
+  </script>
+
+
+  <div id="consent-banner" class="consent-banner" style="display:none">
+    <div class="inner">
+      <div>We use cookies for analytics. You can change your choice at any time.</div>
+      <div>
+        <button id="consent-accept" class="consent-accept">Accept</button>
+        <button id="consent-decline" class="consent-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const KEY = 'et_consent_v1';
+      const saved = localStorage.getItem(KEY);
+
+      const EU_REGION = new Set([
+        'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU',
+        'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES',
+        'SE', 'IS', 'LI', 'NO', 'GB', 'CH'
+      ]);
+
+      const raw = (window.USER_COUNTRY || '').toUpperCase();
+      const unknown = !raw || raw.includes('{');
+      const inEu = EU_REGION.has(raw);
+
+      const applyConsent = (granted) => {
+        gtag('consent', 'update', {
+          ad_storage: granted ? 'granted' : 'denied',
+          ad_user_data: granted ? 'granted' : 'denied',
+          ad_personalization: granted ? 'granted' : 'denied',
+          analytics_storage: granted ? 'granted' : 'denied'
+        });
+      };
+
+      if (saved === 'granted') applyConsent(true);
+      if (saved === 'denied') applyConsent(false);
+
+      if ((inEu || unknown) && saved !== 'granted' && saved !== 'denied') {
+        document.getElementById('consent-banner').style.display = 'block';
+      }
+
+      if (!inEu && !unknown && saved !== 'granted' && saved !== 'denied') {
+        localStorage.setItem(KEY, 'granted');
+        applyConsent(true);
+      }
+
+      // ✅ Accept handler
+      document.getElementById('consent-accept').addEventListener('click', () => {
+        localStorage.setItem(KEY, 'granted');
+        applyConsent(true);
+        document.getElementById('consent-banner').style.display = 'none';
+
+        if (window.gtag) {
+          console.log('[GA] event: page_view (after consent)');
+          gtag('event', 'page_view', {
+            page_title: document.title,
+            page_location: location.href
+          });
+          gtag('event', 'consent_granted', { source: 'banner' });
+        }
+      });
+
+      // ✅ Decline handler (отдельно, не внутри Accept!)
+      document.getElementById('consent-decline').addEventListener('click', () => {
+        localStorage.setItem(KEY, 'denied');
+        applyConsent(false);
+        document.getElementById('consent-banner').style.display = 'none';
+      });
+    })();
+  </script>
+
 </body>
 
 </html>
