@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-
-
   const sections = document.querySelectorAll(".section");
   const navLinks = document.querySelectorAll(".fbs__net-navbar .scroll-link");
 
